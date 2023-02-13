@@ -1,0 +1,13 @@
+extends layout.pug
+
+block append head 
+    title Authentication - Home 
+
+block content 
+    .content.home-content
+        if !status
+            h2 User is un-authenticated
+            a(href="/authenticate") Authenticate
+        else 
+            h2 User is authenticated 
+            a(href="/logout") Logout 

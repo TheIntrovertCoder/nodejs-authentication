@@ -1,0 +1,81 @@
+@font-face
+    font-family: "MontserratAlternates-Regular"
+    src: url("../fonts/MontserratAlternates-Regular.ttf")
+
+@font-face
+    font-family: "MontserratAlternates-SemiBold"
+    src: url("../fonts/MontserratAlternates-SemiBold.ttf")
+
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+html, body
+    height: 100%
+    width: 100%
+    font-family: "MontserratAlternates-Regular "
+
+h1, h2, h3, h4, h5, h6
+    font-family: "MontserratAlternates-SemiBold"
+
+a:any-link
+    text-decoration: none
+
+    &:hover
+        text-decoration: underline
+
+.content
+    height: 100%
+    width: 100%
+
+.home-content
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    gap: 1rem
+
+    a
+        font-size: 1.2rem
+
+.authenticate-content
+    padding: 2rem
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 2rem
+
+    .tabToggler
+        display: inherit
+        gap: inherit
+        
+        button
+            height: 3.125rem
+            width: 12.5rem
+            font-size: 1.2rem
+            border: none
+            background: none
+
+            &.active
+                background-color: rgb(255, 255, 255)
+                border-radius: 10px
+
+    .loginSection, .registerSection
+
+        form
+            display: flex
+            flex-direction: column
+            gap: 2rem
+
+            input, button
+                height: 2.8125rem
+                width: 26.25rem
+                font-size: 1rem
+
+            input
+                padding-inline: 1rem
+
+body
+    background-color: rgb(235, 235, 235)
+    color: rgb(0, 0, 0)

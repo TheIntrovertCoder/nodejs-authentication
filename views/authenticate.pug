@@ -1,0 +1,47 @@
+extends layout.pug 
+
+block append head 
+    title Authentication - Authenticate 
+
+block content 
+    .content.authenticate-content
+        .tabToggler
+            button.loginTab.active Login 
+            button.registerTab Register
+
+        section.loginSection 
+            form(action="/login", method="post") 
+                input#login_email(type="email", name="email" placeholder="email" required)
+                input#login_password(type="password", name="password" placeholder="password" minlength="10" required)
+                button(type="submit") Login
+
+        section.registerSection(style="display: none") 
+            form(action="/register", method="post") 
+                input#register_username(type="text", name="username" placeholder="username" required)
+                input#register_email(type="email", name="email" placeholder="email" required)
+                input#register_password(type="password", name="password" placeholder="password" minlength="10" required)
+                button(type="submit") Register
+
+    script.
+        const loginToggler = document.querySelector(".loginTab"),
+            registerToggler = document.querySelector(".registerTab"),
+            loginSection = document.querySelector(".loginSection"),
+            registerSection = document.querySelector(".registerSection");
+
+        loginToggler.onclick = () => {
+            if ( !loginToggler.classList.contains("active") ) {
+                loginToggler.classList.add("active")
+                registerToggler.classList.remove('active')
+                loginSection.style.display = "flex"
+                registerSection.style.display = "none"
+            }
+        }
+
+        registerToggler.onclick = () => {
+            if ( !registerToggler.classList.contains("active") ) {
+                loginToggler.classList.remove("active")
+                registerToggler.classList.add('active')
+                loginSection.style.display = "none"
+                registerSection.style.display = "flex"
+            }
+        }
